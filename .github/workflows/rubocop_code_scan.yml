@@ -1,0 +1,33 @@
+name: Rubocop Code Scan
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  rubocop-scan:
+    name: Rubocop Code Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Branch
+        uses: actions/checkout@v2
+
+      - name: Set Up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Generate Sarif Output
+        continue-on-error: true
+        run: bundle exec rubocop --require code_scanning --display-cop-names --format CodeScanning::SarifFormatter -o rubocop.sarif
+
+      # - name: Upload Sarif Output
+      #   uses: github/codeql-action/upload-sarif@v1
+      #   with:
+      #     sarif_file: rubocop.sarif
+
+

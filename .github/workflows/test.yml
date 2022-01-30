@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:14.1-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+    env:
+      CHOMP_DATABASE_HOST: localhost
+      CHOMP_DATABASE_PASSWORD: password
+      CHOMP_DATABASE_PORT: 5432
+      CHOMP_DATABASE_USER: postgres
+      RAILS_ENV: test
+    steps:
+      - name: Setup Branch
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Setup Database
+        run: bin/rails db:setup
+
+      - name: Run Unit Tests
+        run: |
+          PARALLEL_TEST_FIRST_IS_1=true bundle exec rake parallel:setup
+          RAILS_ENV=test bundle exec parallel_test -t rspec --test-options "--format documentation --color --order rand" --first-is-1

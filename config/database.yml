@@ -1,0 +1,22 @@
+primary_defaults: &primary_defaults
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['CHOMP_DATABASE_HOST'] %>
+  password: <%= ENV['CHOMP_DATABASE_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['CHOMP_DATABASE_USER'] %>
+
+development:
+  primary:
+    <<: *primary_defaults
+    database: chomp_dev
+
+test:
+  primary:
+    <<: *primary_defaults
+    database: chomp_test<% if ENV['TEST_ENV_NUMBER'] && ENV['TEST_ENV_NUMBER'].length > 0 %>_<%=  ENV['TEST_ENV_NUMBER'] %><% end %>
+
+production:
+  primary:
+    <<: *primary_defaults
+    database: chomp

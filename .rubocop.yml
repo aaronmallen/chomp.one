@@ -1,0 +1,9 @@
+inherit_from:
+  - .rubocop/base.yml
+  - .rubocop/faker.yml
+  - .rubocop/layout.yml
+  - .rubocop/metrics.yml
+  - .rubocop/performance.yml
+  - .rubocop/rails.yml
+  - .rubocop/rspec.yml
+  - .rubocop/style.yml

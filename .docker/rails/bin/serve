@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+bundle check || bundle install --jobs 20 --retry 5
+
+rm -rf tmp/pids/*.pid
+
+bin/rails s -b ${RAILS_BIND} -p ${RAILS_PORT}
