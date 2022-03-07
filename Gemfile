@@ -34,7 +34,7 @@ end
 
 group :test do
   gem 'database_cleaner-active_record', '~> 2.0'
-  gem 'faker', '~> 2.19'
+  gem 'faker', '~> 2.20'
   gem 'shoulda-matchers', '~> 5.1'
   gem 'simplecov', '~> 0.21'
   gem 'simplecov-lcov', '~> 0.8'
