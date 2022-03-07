@@ -16,7 +16,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'brakeman', '~> 5.2'
-  gem 'code-scanning-rubocop', '~> 0.5'
+  gem 'code-scanning-rubocop', '~> 0.6'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'parallel_tests', '~> 3.7'
@@ -34,7 +34,7 @@ end
 
 group :test do
   gem 'database_cleaner-active_record', '~> 2.0'
-  gem 'faker', '~> 2.19'
+  gem 'faker', '~> 2.20'
   gem 'shoulda-matchers', '~> 5.1'
   gem 'simplecov', '~> 0.21'
   gem 'simplecov-lcov', '~> 0.8'
