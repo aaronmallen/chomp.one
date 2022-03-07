@@ -9,7 +9,7 @@ gem 'bcrypt', '~> 3.1'
 gem 'bootsnap', '~> 1.10', require: false
 gem 'jbuilder', '~> 2.11'
 gem 'pg', '~> 1.3'
-gem 'puma', '~> 5.5'
+gem 'puma', '~> 5.6'
 gem 'rails', '~> 7.0'
 gem 'sprockets-rails', '~> 3.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
