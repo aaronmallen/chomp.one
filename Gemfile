@@ -21,7 +21,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'parallel_tests', '~> 3.7'
   gem 'rspec-rails', '~> 5.1'
-  gem 'rubocop', '~> 1.25'
+  gem 'rubocop', '~> 1.26'
   gem 'rubocop-faker', '~>1.1'
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rails', '~> 2.14'
