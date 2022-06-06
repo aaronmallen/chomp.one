@@ -19,7 +19,7 @@ group :development, :test do
   gem 'code-scanning-rubocop', '~> 0.6'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
-  gem 'parallel_tests', '~> 3.8'
+  gem 'parallel_tests', '~> 3.11'
   gem 'rspec-rails', '~> 5.1'
   gem 'rubocop', '~> 1.28'
   gem 'rubocop-faker', '~>1.1'
