@@ -41,7 +41,7 @@ module Chomp
         def test_number
           return unless ENV['TEST_ENV_NUMBER']
 
-          ENV['TEST_ENV_NUMBER'].length < 1 ? '1' : ENV['TEST_ENV_NUMBER'] # rubocop:disable Style/ZeroLengthPredicate
+          ENV['TEST_ENV_NUMBER'].length < 1 ? '1' : ENV.fetch('TEST_ENV_NUMBER', nil) # rubocop:disable Style/ZeroLengthPredicate
         end
       end
     end
