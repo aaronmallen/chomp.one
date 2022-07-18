@@ -25,7 +25,7 @@ group :development, :test do
   gem 'rubocop-faker', '~>1.1'
   gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.15'
-  gem 'rubocop-rspec', '~> 2.11'
+  gem 'rubocop-rspec', '~> 2.12'
 end
 
 group :development do
